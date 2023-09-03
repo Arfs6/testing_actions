@@ -1,0 +1,134 @@
+03/09/2023 18:32:28 main DEBUG: Starting TWBlue 11
+03/09/2023 18:32:28 config DEBUG: Loading global app settings...
+03/09/2023 18:32:28 config DEBUG: Loading keymap...
+03/09/2023 18:32:28 main DEBUG: Using Windows 64bit
+03/09/2023 18:32:28 main DEBUG: Application path is \\wsl.localhost\Ubuntu\tmp\codespace\testing_actions\src
+03/09/2023 18:32:28 main DEBUG: config path  is \\wsl.localhost\Ubuntu\tmp\codespace\testing_actions\src\config
+03/09/2023 18:32:28 sound DEBUG: creating stream URL player...
+03/09/2023 18:32:28 sound DEBUG: URL Player initialized
+03/09/2023 18:32:55 core.output DEBUG: Initializing output subsystem.
+03/09/2023 18:33:19 sessionmanager.sessionManager DEBUG: Setting up the session manager.
+03/09/2023 18:33:19 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('Account',), arguments: {'style': 8224}
+03/09/2023 18:33:20 sessionmanager.sessionManager DEBUG: Filling the sessions list.
+03/09/2023 18:33:20 sessionmanager.sessionManager DEBUG: Adding session 077472
+03/09/2023 18:33:20 sessionmanager.sessionManager DEBUG: Starting sessions...
+03/09/2023 18:33:20 sessionmanager.session DEBUG: Creating config file 077472/session.conf
+03/09/2023 18:33:21 sound DEBUG: Setting input and output devices...
+03/09/2023 18:33:21 sessionmanager.session DEBUG: Loading storage data...
+03/09/2023 18:33:21 sessions.mastodonSession DEBUG: Logging in to Mastodon instance https://hachyderm.io...
+03/09/2023 18:33:22 sessions.mastodonSession DEBUG: Logged.
+03/09/2023 18:33:22 mainController DEBUG: Binding other application events...
+03/09/2023 18:33:22 mainController DEBUG: Binding the exit function...
+03/09/2023 18:33:24 mainController DEBUG: Creating buffers for all sessions...
+03/09/2023 18:33:24 mainController DEBUG: Working on session 077472
+03/09/2023 18:33:25 controller.buffers.base.account DEBUG: Initializing buffer Mastodon: arfs6@hachyderm.io, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:25 mainController DEBUG: Creating buffer of type BaseBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'timeline_home', 'name': 'home_timeline', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'tweet_received.ogg'}
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Initializing buffer home_timeline, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:25 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_post at 0x000001FB13C50A60>
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Binding events...
+03/09/2023 18:33:25 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.base.BaseBuffer object at 0x000001FB137BE8C0> into control 0
+03/09/2023 18:33:25 mainController DEBUG: Creating buffer of type BaseBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'timeline_local', 'name': 'local_timeline', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'tweet_received.ogg'}
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Initializing buffer local_timeline, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:25 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_post at 0x000001FB13C50A60>
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Binding events...
+03/09/2023 18:33:25 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.base.BaseBuffer object at 0x000001FB137BEB90> into control 0
+03/09/2023 18:33:25 mainController DEBUG: Creating buffer of type MentionsBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'notifications', 'name': 'mentions', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'mention_received.ogg'}
+03/09/2023 18:33:25 controller.buffers.mastodon.base DEBUG: Initializing buffer mentions, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:25 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_post at 0x000001FB13C50A60>
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Binding events...
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.mentions.MentionsBuffer object at 0x000001FB137BEC50> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type ConversationListBuffer with parent_tab of 0 arguments {'compose_func': 'compose_conversation', 'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'conversations', 'name': 'direct_messages', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'dm_received.ogg'}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer direct_messages, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_conversation at 0x000001FB13C50C10>
+03/09/2023 18:33:26 controller.buffers.mastodon.conversations DEBUG: Binding events...
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.conversations.ConversationListBuffer object at 0x000001FB137BEF80> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type BaseBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'account_statuses', 'name': 'sent', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'tweet_received.ogg', 'id': 110470075318864016}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer sent, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_post at 0x000001FB13C50A60>
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Binding events...
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.base.BaseBuffer object at 0x000001FB137BF0D0> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type BaseBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'favourites', 'name': 'favorites', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'favourite.ogg'}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer favorites, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_post at 0x000001FB13C50A60>
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Binding events...
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.base.BaseBuffer object at 0x000001FB137BF9A0> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type BaseBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'function': 'bookmarks', 'name': 'bookmarks', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'favourite.ogg'}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer bookmarks, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User', 'Text', 'Date', 'Client'), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_post at 0x000001FB13C50A60>
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Binding events...
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.base.BaseBuffer object at 0x000001FB137BF730> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type UserBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'compose_func': 'compose_user', 'function': 'account_followers', 'name': 'followers', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'update_followers.ogg', 'id': 110470075318864016}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer followers, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User',), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_user at 0x000001FB13C50B80>
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.users.UserBuffer object at 0x000001FB137BF700> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type UserBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'compose_func': 'compose_user', 'function': 'account_following', 'name': 'following', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io', 'sound': 'update_followers.ogg', 'id': 110470075318864016}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer following, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User',), arguments: {'style': 8225}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_user at 0x000001FB13C50B80>
+03/09/2023 18:33:26 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.users.UserBuffer object at 0x000001FB137BF6A0> into control 0
+03/09/2023 18:33:26 mainController DEBUG: Creating buffer of type UserBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'compose_func': 'compose_user', 'function': 'blocks', 'name': 'blocked', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io'}
+03/09/2023 18:33:26 controller.buffers.mastodon.base DEBUG: Initializing buffer blocked, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:26 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User',), arguments: {'style': 8225}
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_user at 0x000001FB13C50B80>
+03/09/2023 18:33:27 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.users.UserBuffer object at 0x000001FB137BF5E0> into control 0
+03/09/2023 18:33:27 mainController DEBUG: Creating buffer of type UserBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'compose_func': 'compose_user', 'function': 'mutes', 'name': 'muted', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io'}
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: Initializing buffer muted, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:27 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('User',), arguments: {'style': 8225}
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_user at 0x000001FB13C50B80>
+03/09/2023 18:33:27 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.users.UserBuffer object at 0x000001FB137BC8E0> into control 0
+03/09/2023 18:33:27 mainController DEBUG: Creating buffer of type NotificationsBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'compose_func': 'compose_notification', 'function': 'notifications', 'name': 'notifications', 'sessionObject': <sessions.mastodon.session.Session object at 0x000001FB137A7E80>, 'account': 'Mastodon: arfs6@hachyderm.io'}
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: Initializing buffer notifications, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:27 multiplatform_widgets.widgets DEBUG: Creating list: Columns: ('Text', 'Date'), arguments: {'style': 8225}
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: Compose_function: <function compose_notification at 0x000001FB13C50CA0>
+03/09/2023 18:33:27 mainController DEBUG: Inserting buffer <controller.buffers.mastodon.notifications.NotificationsBuffer object at 0x000001FB137BEFE0> into control 0
+03/09/2023 18:33:27 mainController DEBUG: Creating buffer of type EmptyBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'name': 'timelines', 'account': 'Mastodon: arfs6@hachyderm.io'}
+03/09/2023 18:33:27 controller.buffers.base.empty DEBUG: Initializing buffer timelines, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:27 mainController DEBUG: Inserting buffer <controller.buffers.base.empty.EmptyBuffer object at 0x000001FB137BE830> into control 0
+03/09/2023 18:33:27 mainController DEBUG: Creating buffer of type EmptyBuffer with parent_tab of 0 arguments {'parent': <wx._core.Treebook object at 0x000001FB13773880>, 'name': 'searches', 'account': 'Mastodon: arfs6@hachyderm.io'}
+03/09/2023 18:33:27 controller.buffers.base.empty DEBUG: Initializing buffer searches, account Mastodon: arfs6@hachyderm.io
+03/09/2023 18:33:27 mainController DEBUG: Inserting buffer <controller.buffers.base.empty.EmptyBuffer object at 0x000001FB137BEEF0> into control 0
+03/09/2023 18:33:27 mainController DEBUG: Setting updates to buffers every 60 seconds...
+03/09/2023 18:33:27 mainController DEBUG: starting buffers... Session 077472
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: Starting stream for buffer home_timeline, account Mastodon: arfs6@hachyderm.io and type baseBuffer
+03/09/2023 18:33:27 controller.buffers.mastodon.base DEBUG: args: (), kwargs: {}
+03/09/2023 18:33:27 keyboard_handler WARNING: Failed to register hotkey: alt+win+n for function <bound method Controller.post_tweet of <controller.mainController.Controller object at 0x000001FB137A7AC0>>
+03/09/2023 18:33:28 controller.buffers.mastodon.base DEBUG: Number of items retrieved: 40
+03/09/2023 18:33:28 controller.buffers.mastodon.base DEBUG: The list contains 0 items 
+03/09/2023 18:33:28 controller.buffers.mastodon.base DEBUG: Putting 40 items on the list
+03/09/2023 18:33:29 controller.buffers.mastodon.base DEBUG: Now the list contains 40 items 
+03/09/2023 18:33:29 controller.buffers.mastodon.base DEBUG: Starting stream for buffer local_timeline, account Mastodon: arfs6@hachyderm.io and type baseBuffer
+03/09/2023 18:33:29 controller.buffers.mastodon.base DEBUG: args: (), kwargs: {}
+03/09/2023 18:33:30 controller.buffers.mastodon.base DEBUG: Number of items retrieved: 40
+03/09/2023 18:33:30 controller.buffers.mastodon.base DEBUG: The list contains 0 items 
+03/09/2023 18:33:30 controller.buffers.mastodon.base DEBUG: Putting 40 items on the list
+03/09/2023 18:33:30 controller.buffers.mastodon.base DEBUG: Now the list contains 40 items 
+03/09/2023 18:33:30 controller.buffers.mastodon.mentions DEBUG: Starting stream for buffer mentions, account Mastodon: arfs6@hachyderm.io and type baseBuffer
+03/09/2023 18:33:30 controller.buffers.mastodon.mentions DEBUG: args: (), kwargs: {}
+03/09/2023 18:33:31 controller.buffers.mastodon.mentions DEBUG: Number of items retrieved: 13
+03/09/2023 18:33:31 controller.buffers.mastodon.mentions DEBUG: The list contains 0 items 
+03/09/2023 18:33:31 controller.buffers.mastodon.mentions DEBUG: Putting 13 items on the list
+03/09/2023 18:33:31 controller.buffers.mastodon.mentions DEBUG: Now the list contains 13 items 
+03/09/2023 18:33:31 controller.buffers.mastodon.conversations DEBUG: Starting stream for buffer direct_messages, account Mastodon: arfs6@hachyderm.io and type baseBuffer
+03/09/2023 18:33:31 controller.buffers.mastodon.conversations DEBUG: args: (), kwargs: {}
+03/09/2023 18:33:31 controller.buffers.mastodon.conversations DEBUG: Number of items retrieved: 0
+03/09/2023 18:33:31 controller.buffers.mastodon.base DEBUG: Starting stream for buffer sent, account Mastodon: arfs6@hachyderm.io and type baseBuffer
+03/09/2023 18:33:31 controller.buffers.mastodon.base DEBUG: args: (), kwargs: {'id': 110470075318864016}
+03/09/2023 18:33:33 controller.buffers.mastodon.base DEBUG: Number of items retrieved: 33
+03/09/2023 18:33:33 controller.buffers.mastodon.base DEBUG: The list contains 0 items 
+03/09/2023 18:33:33 controller.buffers.mastodon.base DEBUG: Putting 33 items on the list
+03/09/2023 18:33:33 controller.buffers.mastodon.base DEBUG: Now the list contains 33 items 
+03/09/2023 18:33:33 controller.buffers.mastodon.base DEBUG: Starting stream for buffer favorites, account Mastodon: arfs6@hachyderm.io and type baseBuffer
+03/09/2023 18:33:33 controller.buffers.mastodon.base DEBUG: args: (), kwargs: {}
+03/09/2023 18:33:33 mainController DEBUG: Exiting...
+03/09/2023 18:33:33 mainController DEBUG: Saving global configuration...
+03/09/2023 18:33:33 mysc.repeating_timer DEBUG: Stopping repeater for <bound method soundSystem.clear_list of <sound.soundSystem object at 0x000001FB137A7EE0>>
+03/09/2023 18:33:33 mainController DEBUG: Saving database for 077472
+03/09/2023 18:33:33 sessionmanager.session DEBUG: Saving storage information...
