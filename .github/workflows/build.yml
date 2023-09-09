@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: first view
         run: |
-        pwd
-        ls -a
+          pwd
+          ls -a
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Build binaries
@@ -18,4 +18,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: post checking out
         run: |
-        ls -a
+          ls -a
