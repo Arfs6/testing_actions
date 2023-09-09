@@ -3,10 +3,10 @@ run-name: Auto build TW Blue
 on: [push, workflow_dispatch]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      -name: first view
-        run |
+      - name: first view
+        run: |
         pwd
         ls -a
       - name: Check out repository code
@@ -16,6 +16,6 @@ jobs:
           echo workspace: ${{ github.workspace }}
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      -name: post checking out
-        run |
+      - name: post checking out
+        run: |
         ls -a
