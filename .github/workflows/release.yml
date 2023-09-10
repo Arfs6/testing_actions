@@ -1,0 +1,28 @@
+# Release a new TW Blue installer on github.
+# This workflow runs on push.
+name: Release
+on: [push, workflow_dispatch]
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Get python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+        run: pip install -r requirements.txt
+
+      - name: Get nsis
+        run: |
+          iwr -useb get.scoop.sh -outfile 'install.ps1'
+          .\install.ps1 -RunAsAdmin
+          scoop update
+          scoop bucket add extras
+          scoop install nsis
+
+      - name: print nsis and python version
+        run: |
+          makensis -VERSION
+          python --version
