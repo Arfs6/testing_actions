@@ -8,11 +8,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      - name: Get python
+
+      - name: Setup python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-        run: pip install -r requirements.txt
+          cache: 'pip'
 
       - name: Get nsis
         run: |
@@ -26,3 +27,6 @@ jobs:
         run: |
           makensis -VERSION
           python --version
+
+      - name: Build installer
+        run: .\scripts\build.ps1
