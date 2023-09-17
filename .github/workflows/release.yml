@@ -3,30 +3,29 @@
 name: Release
 on: [push, workflow_dispatch]
 jobs:
-  build-and-release:
+  build-x64-binary:
     runs-on: windows-latest
     steps:
-      - name: Checkout repo
+      - name: clone repo
         uses: actions/checkout@v4
-
-      - name: Setup python
-        uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
-          cache: 'pip'
-
-      - name: Get nsis
+          submodules: true
+      - name: Get python interpreter
+        uses: actions/setup-python@v4
+      - name: get pip requirements
+        run: pip install -r requirements.txt
+      - name: Build binary
         run: |
-          iwr -useb get.scoop.sh -outfile 'install.ps1'
-          .\install.ps1 -RunAsAdmin
-          scoop update
-          scoop bucket add extras
-          scoop install nsis
-
-      - name: print nsis and python version
-        run: |
-          makensis -VERSION
-          python --version
-
-      - name: Build installer
-        run: .\scripts\build.ps1
+          cd docs
+          python documentation_importer.py
+          python generator.py
+          mv documentation ..\src\documentation
+          cd ..
+          cp license.txt src/documentation/license.txt
+          cd src
+          python setup.py build
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: TWBlue
+          path: src/dist
