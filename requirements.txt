@@ -45,7 +45,6 @@ sniffio
 attrs
 importlib-metadata
 numpy
-pillow
 charset-normalizer
 demoji
 psutil
