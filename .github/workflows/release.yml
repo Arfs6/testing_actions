@@ -16,20 +16,8 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: get pip requirements
-        run: pip install -r requirements.txt
-
       - name: Build binary
-  # Generate documentation and build binaries
-        run: |
-          cd doc
-          python documentation_importer.py
-          python generator.py
-          mv documentation ..\src\documentation
-          cd ..
-          cp license.txt src/documentation/license.txt
-          cd src
-          python setup.py build
+        run: .\scripts\build.ps1
 
       - name: upload artifact
         uses: actions/upload-artifact@v3
@@ -50,23 +38,16 @@ jobs:
         with:
           python-version: '3.10'
           architecture: x86
-      - name: get pip requirements
-        run: pip install -r requirements.txt
+
       - name: Build binary
-        run: |
-          cd doc
-          python documentation_importer.py
-          python generator.py
-          mv documentation ..\src\documentation
-          cd ..
-          cp license.txt src/documentation/license.txt
-          cd src
-          python setup.py build
+        run: .\scripts\build.ps1
+
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: TWBlue64
           path: src/dist
+
   make-installer:
     runs-on: windows-latest
     needs: [build-x64-binary, build-x86-binary]
