@@ -1,7 +1,7 @@
 # Build a TW Blue installer.
 # Most be called from root of repo
 echo "Installing python packages..."
-pwd .
+pwd
 pip install -r requirements.txt
 echo "done."
 
