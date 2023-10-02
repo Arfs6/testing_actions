@@ -46,6 +46,7 @@ attrs
 importlib-metadata
 numpy
 charset-normalizer
+pillow==9.5.0
 demoji
 psutil
 git+https://github.com/accessibleapps/libloader
