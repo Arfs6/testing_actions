@@ -1,31 +1,7 @@
-# Release a new TW Blue installer on github.
-# This workflow runs on push.
 name: Release
 on: [push, workflow_dispatch]
 jobs:
-  build-x64-binary:
-  # Builds an x64 binary of TW Blue.
-    runs-on: windows-2019
-    steps:
-      - name: clone repo
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: Get python interpreter
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Build binary
-        run: .\scripts\build.ps1
-
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: TWBlue
-          path: src/dist
-
-  build-x86-binary:
+  build-pillow:
     runs-on: windows-latest
     steps:
       - name: clone repo
@@ -40,44 +16,4 @@ jobs:
           architecture: x86
 
       - name: Build binary
-        run: .\scripts\build.ps1
-
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: TWBlue64
-          path: src/dist
-
-  make-installer:
-    runs-on: windows-latest
-    needs: [build-x64-binary, build-x86-binary]
-    steps:
-      - name: clone repo
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Get nsis
-        run: |
-          iwr -useb get.scoop.sh -outfile 'install.ps1'
-          .\install.ps1 -RunAsAdmin
-          scoop update
-          scoop bucket add extras
-          scoop install nsis
-
-      - name: get artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: scripts
-
-      - name: make installer
-        run: |
-          cd src
-          python write_version_data.py
-          cd ../scripts
-          makensis twblue.nsi
+        run: python -m pip install pillow
