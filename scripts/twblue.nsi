@@ -15,10 +15,10 @@ SetCompressor /solid lzma
 SetDatablockOptimize on
 VIAddVersionKey ProductName "TWBlue"
 VIAddVersionKey LegalCopyright "Copyright 2014-2022 MCV Software."
-VIAddVersionKey ProductVersion "0.95.0"
-VIAddVersionKey FileVersion "0.95.0"
-VIProductVersion "0.95.0"
-VIFileVersion "0.95.0"
+VIAddVersionKey ProductVersion "2023.07.10.0"
+VIAddVersionKey FileVersion "2023.07.10.0"
+VIProductVersion "2023.07.10.0"
+VIFileVersion "2023.07.10.0"
 !insertmacro MUI_PAGE_WELCOME
 !define MUI_LICENSEPAGE_RADIOBUTTONS
 !insertmacro MUI_PAGE_LICENSE "license.txt"
@@ -58,7 +58,8 @@ SetOutPath "$INSTDIR"
 ${If} ${RunningX64}
 File /r TWBlue64\*
 ${Else}
-File /r TWBlue\*
+messagebox MB_ICONSTOP "Error: This TWBlue installer is only compatible with 64-bit systems. TWBlue does not support 32 bit systems any more."
+Quit
 ${EndIf}
 CreateShortCut "$DESKTOP\TWBlue.lnk" "$INSTDIR\TWBlue.exe"
 !insertmacro MUI_STARTMENU_WRITE_BEGIN startmenu
@@ -72,7 +73,7 @@ WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "D
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "UninstallString" '"$INSTDIR\uninstall.exe"'
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall" "InstallLocation" $INSTDIR
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall" "Publisher" "Manuel Cortéz"
-WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "DisplayVersion" "0.95"
+WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "DisplayVersion" "2023.07.10"
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "URLInfoAbout" "https://twblue.es"
 WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "VersionMajor" 0
 WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\twblue" "VersionMinor" 0
