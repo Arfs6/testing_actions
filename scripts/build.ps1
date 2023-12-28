@@ -4,7 +4,6 @@ echo "Generating documentation..."
 cd doc
 python documentation_importer.py
 python generator.py
-mv ..\license.txt documentation
 mv documentation ..\src
 cd ..
 echo "done."

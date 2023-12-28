@@ -39,8 +39,5 @@ jobs:
           cd ../scripts
           makensis twblue.nsi
 
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: TWBlue
-          path: scripts/TWBlue_setup.exe
+      - name: Create new release
+        run: gh release create snapshot -n "This release is a snapshot of the current development version of twblue." -p -t "Snapshot" scripts\TWBlue_setup.exe
