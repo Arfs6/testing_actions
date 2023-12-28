@@ -30,7 +30,7 @@ jobs:
       - name: Build binary
         run: |
           .\scripts\build.ps1
-          mv src/dist scripts
+          mv src/dist scripts\TWBlue64
 
       - name: make installer
         run: |
