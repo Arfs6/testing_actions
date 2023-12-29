@@ -40,4 +40,6 @@ jobs:
           makensis twblue.nsi
 
       - name: Create new release
+        env:
+          gh_token: ${{ github.token }}
         run: gh release create snapshot -n "This release is a snapshot of the current development version of twblue." -p -t "Snapshot" scripts\TWBlue_setup.exe
