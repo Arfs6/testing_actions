@@ -39,7 +39,7 @@ jobs:
       - name: make installer
         run: |
           cd scripts
-          nsis twblue.nsi
+          makensis twblue.nsi
 
       - name: Create new release
         env:
