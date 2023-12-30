@@ -37,6 +37,7 @@ jobs:
           mv src/dist scripts\TWBlue64
 
       - name: make installer
+        run: |
           cd scripts
           nsis twblue.nsi
 
