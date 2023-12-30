@@ -3,7 +3,7 @@
 name: Release
 on:
   push:
-    tags: ["stable"]
+    tags: ["release"]
   workflow_dispatch:
 
 jobs:
@@ -11,8 +11,6 @@ jobs:
   # Builds an x64 binary and an installer of TW Blue.
     runs-on: windows-latest
     steps:
-      - name: testing 7zip
-        run: 7zip
       - name: clone repo
         uses: actions/checkout@v4
         with:
@@ -39,13 +37,14 @@ jobs:
           mv src/dist scripts\TWBlue64
 
       - name: make installer
-        run: |
-          cd src
-          python write_version_data.py
-          cd ../scripts
+          cd scripts
           nsis twblue.nsi
 
       - name: Create new release
         env:
           gh_token: ${{ github.token }}
-        run: gh release create snapshot -n "This release is a snapshot of the current development version of twblue." -p -t "Snapshot" scripts\TWBlue_setup.exe
+        run: |
+          mkdir .release-assets
+          mv scripts\TWBlue_setup.exe .release-assets\TWBlue_setup_$(cat version.txt).exe
+          7z a -tzip .release-assets\TWBlue_portable_$(cat version.txt).zip scripts\TWBlue64
+          gh release create release -p -t "Version $(cat version.txt)" .github-releases\*
